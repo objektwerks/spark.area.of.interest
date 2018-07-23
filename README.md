@@ -1,21 +1,23 @@
 Spark Locator
 -------------
->The purpose of the project is to locate targets by date range and meter radius across a set of geolocations.
+>The purpose of the project is to locate targets by date range and within meter radius across a set of geolocations.
 
 Sources
 -------
 1. Location **parquet** records.
-2. LocationOfInterest **csv** records.
+2. AreaOfInterest **csv** records.
 
-Search Criteria
----------------
-1. Location records within 30-day period
-2. Location records within 50 meter radius of LocationOfInterest records.
+Flow
+----
+1. select Locations for a 30-day period
+2. where a Location is within a 50 meter radius of a AreaOfInterest in a set of AreaOfInterests
 
-Results
--------
-1. Console
-2. Log
+Sink
+----
+1. Location log.
+
+Considerations
+--------------
 
 Test
 ----
@@ -27,5 +29,7 @@ Run
  
 Output
 ------
-1. ./target/app.log
-2. ./target/test.log
+1. console
+2. ./target/location.log
+3. ./target/app.log
+4. ./target/test.logs
