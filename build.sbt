@@ -8,7 +8,7 @@ libraryDependencies ++= {
     "org.apache.spark" % "spark-core_2.11" % sparkVersion,
     "org.apache.spark" % "spark-streaming_2.11" % sparkVersion,
     "org.apache.spark" % "spark-sql_2.11" % sparkVersion,
-    "org.slf4j" % "slf4j-api" % "1.7.25" % "test",
+    "org.slf4j" % "slf4j-api" % "1.7.25",
     "org.scalatest" % "scalatest_2.11" % "3.0.5" % "test"
   )
 }
@@ -27,5 +27,3 @@ scalacOptions ++= Seq(
   "-Xlint:missing-interpolator",
   "-Xlint"
 )
-javaOptions += "-server -Xss1m -Xmx2g"
-fork in test := true
