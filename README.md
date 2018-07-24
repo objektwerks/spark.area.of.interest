@@ -4,8 +4,8 @@ Spark Locator
 
 Source
 ------
-1. Location **parquet** records
-2. AreaOfInterest **csv** records
+1. Location **parquet** records   (advertiserId: String, locationAt: Instant, latitude: Double, longitude: Double)
+2. AreaOfInterest **csv** records (name: String, latitude: Double, longitude: Double, radius: Double)
 
 Flow
 ----
