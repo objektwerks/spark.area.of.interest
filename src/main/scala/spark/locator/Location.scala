@@ -1,10 +1,8 @@
 package spark.locator
 
-import java.time.Instant
-
 import org.apache.spark.sql.Encoders
 
-case class Location(advertiserId: String, locationAt: Instant, latitude: Double, longitude: Double)
+case class Location(advertiserId: String, locationAt: Long, latitude: Double, longitude: Double)
 
 object Location {
   val locationStructType = Encoders.product[Location].schema

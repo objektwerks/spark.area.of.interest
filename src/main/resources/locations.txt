@@ -1,1 +1,2 @@
 advertiserId,locationAt,latitude,longitude
+1,1532429883757,26.850343,-82.294261
