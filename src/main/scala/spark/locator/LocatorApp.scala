@@ -14,5 +14,5 @@ object LocatorApp extends App {
     .csv("./data/areas_of_interest.txt")
     .as[AreaOfInterest]
     .collect
-    .toList
+    .toSet
 }
