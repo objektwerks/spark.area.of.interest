@@ -9,8 +9,8 @@ Source
 
 Flow
 ----
-1. Locations within a 30-day period
-2. Locations within a 50 meter radius of locations within a set of AreaOfInterests
+1. Locations within a **n-day** period
+2. Locations within a **n-meter** radius of locations within a set of AreaOfInterests
 
 Sink
 ----
