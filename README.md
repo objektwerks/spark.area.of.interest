@@ -7,6 +7,8 @@ Source
 1. Location **parquet** records   (advertiserId: String, locationAt: Long, latitude: Double, longitude: Double)
 2. AreaOfInterest **csv** records (name: String, latitude: Double, longitude: Double, radius: Double)
 
+**Parquet formatted Location records are not supported at this time.**
+
 Flow
 ----
 1. Locations within a **n-day** period
