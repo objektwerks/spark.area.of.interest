@@ -2,8 +2,8 @@ Spark Locator
 -------------
 >App that maps locations by date range and meter radius to a set of geolocations.
 
-Sourcess
--------
+Source
+------
 1. Location **parquet** records
 2. AreaOfInterest **csv** records
 
