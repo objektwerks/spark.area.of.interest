@@ -15,4 +15,13 @@ object LocatorApp extends App {
     .as[AreaOfInterest]
     .collect
     .toSet
+
+  import Location._
+  val locations = sparkSession
+    .readStream
+    .option("header", true)
+    .schema(locationStructType)
+    .csv("./data/person")
+    .as[Location]
+
 }
