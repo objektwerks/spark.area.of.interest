@@ -33,5 +33,5 @@ object LocatorApp extends App {
     .foreach(mapLocationToAreaOfInterestsForeachWriter)
     .start()
 
-  job.awaitTermination(10000L)
+  job.awaitTermination(30000L)
 }

@@ -24,5 +24,4 @@ Run
  
 Output
 ------
-1. console
-2. ./target/app.log
+1. ./target/app.log
