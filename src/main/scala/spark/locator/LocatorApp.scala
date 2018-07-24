@@ -13,4 +13,6 @@ object LocatorApp extends App {
     .schema(areaOfInterestStructType)
     .csv("./data/areas_of_interest.txt")
     .as[AreaOfInterest]
+    .collect
+    .toList
 }
