@@ -21,6 +21,14 @@ Sink
 Run
 ---
 1. sbt clean compile run
+
+Web
+---
+1. http://192.168.1.8:4040
+
+Stop
+----
+1. Control-C
  
 Output
 ------
