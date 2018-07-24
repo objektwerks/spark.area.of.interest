@@ -10,7 +10,12 @@ package object locator {
   val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(30)).toEpochMilli
   val mapLocationToAreaOfInterestsForeachWriter = new ForeachWriter[Map[AreaOfInterest, Location]] {
     override def open(partitionId: Long, version: Long): Boolean = true
-    override def process(map: Map[AreaOfInterest, Location]): Unit = println(map.toString)
+    override def process(map: Map[AreaOfInterest, Location]): Unit = {
+      map.foreach { case (areaOfInterest, location) =>
+        println(s"area of intererst: $areaOfInterest")
+        println(s"\tlocation within area of interest: $location")
+      }
+    }
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
@@ -18,9 +23,7 @@ package object locator {
                                    location: Location): Map[AreaOfInterest, Location] = {
     areaOfInterests
       .flatMap { areaOfInterest =>
-        val t = isLocationWithinAreaOfInterest(areaOfInterest, location)
-        println(t)
-        t
+        isLocationWithinAreaOfInterest(areaOfInterest, location)
       }.toMap
   }
   /**
@@ -42,6 +45,7 @@ package object locator {
     }
     val c = 2 * atan2(sqrt(a), sqrt(1 - a))
     val distanceBetweenAreaOfInterestAndLocation = earthRadiusInMeters * c
+    println(s"delta distance: $distanceBetweenAreaOfInterestAndLocation radius: ${areaOfInterest.radius}")
     if (distanceBetweenAreaOfInterestAndLocation < areaOfInterest.radius)
       Some((areaOfInterest, location))
     else None

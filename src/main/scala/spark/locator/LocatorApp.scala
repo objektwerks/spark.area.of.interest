@@ -6,8 +6,6 @@ object LocatorApp extends App {
   val sparkSession = SparkSession.builder.master("local[*]").appName("Locator").getOrCreate()
   import sparkSession.implicits._
 
-  sys.addShutdownHook(sparkSession.stop)
-
   import AreaOfInterest._
   val areasOfInterest = sparkSession
     .read
@@ -35,5 +33,5 @@ object LocatorApp extends App {
     .foreach(mapLocationToAreaOfInterestsForeachWriter)
     .start()
 
-  job.awaitTermination(3000L)
+  job.awaitTermination(10000L)
 }

@@ -16,13 +16,9 @@ Sink
 ----
 1. AreaOfInterest -> Locations map
 
-Test
-----
-1. sbt clean test
-
 Run
 ---
-1. sbt clean test run
+1. sbt clean compile run
  
 Output
 ------
