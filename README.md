@@ -24,4 +24,3 @@ Output
 ------
 1. console
 2. ./target/app.log
-3. ./target/test.log
