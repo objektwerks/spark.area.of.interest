@@ -1,6 +1,6 @@
 Spark Locator
 -------------
->App that maps locations by date range and meter radius to a set of geolocations.
+>App that maps locations by date range and meter radius to a set of area-of-interests.
 
 Source
 ------
