@@ -1,5 +1,7 @@
 package spark.locator
 
+import java.time.{Duration, Instant}
+
 import org.apache.spark.sql.SparkSession
 
 object LocatorApp extends App {
@@ -7,6 +9,8 @@ object LocatorApp extends App {
   import sparkSession.implicits._
 
   sys.addShutdownHook(sparkSession.stop)
+
+  val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(30)).toEpochMilli
 
   import AreaOfInterest._
   val areasOfInterest = sparkSession
@@ -27,7 +31,7 @@ object LocatorApp extends App {
     .as[Location]
 
   locations
-    .filter(location => location.locationAt > 1)
+    .filter(location => location.locationAt > ThirtyDaysHence)
     .map(location => mapLocationToAreaOfInterests(areasOfInterest, location))
 
   val job = locations
