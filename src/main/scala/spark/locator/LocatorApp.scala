@@ -11,7 +11,7 @@ object LocatorApp extends App {
   }
 
   import AreaOfInterest._
-  val areasOfInterest = sparkSession
+  val areasOfInterests = sparkSession
     .read
     .option("header", true)
     .schema(areaOfInterestStructType)
@@ -19,6 +19,7 @@ object LocatorApp extends App {
     .as[AreaOfInterest]
     .collect
     .toList
+  val locationToAreaOfInterests = mapLocationToAreaOfInterests(areasOfInterests)(_:Location)
 
   import Location._
   val locations = sparkSession
@@ -31,7 +32,7 @@ object LocatorApp extends App {
 
   val job = locations
     .filter(location => location.locationAt > ThirtyDaysHence)
-    .map(location => mapLocationToAreaOfInterests(areasOfInterest, location))
+    .map(location => locationToAreaOfInterests(location))
     .as[Map[AreaOfInterest, Location]]
     .writeStream
     .foreach(mapLocationToAreaOfInterestsForeachWriter)

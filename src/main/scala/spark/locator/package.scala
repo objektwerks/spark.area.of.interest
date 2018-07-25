@@ -16,16 +16,16 @@ package object locator {
     override def process(map: Map[AreaOfInterest, Location]): Unit = {
       logger.info("**************************************************")
       map.foreach { case (areaOfInterest, location) =>
-        logger.info(s"area of intererst: $areaOfInterest")
-        logger.info(s"\tlocation within area of interest: $location")
+        logger.info(s"$areaOfInterest")
+        logger.info(s"\t$location")
       }
       logger.info("**************************************************")
     }
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
-  def mapLocationToAreaOfInterests(areaOfInterests: List[AreaOfInterest],
-                                   location: Location): Map[AreaOfInterest, Location] = {
+  def mapLocationToAreaOfInterests(areaOfInterests: List[AreaOfInterest])
+                                  (location: Location): Map[AreaOfInterest, Location] = {
     areaOfInterests
       .flatMap { areaOfInterest =>
         isLocationWithinAreaOfInterest(areaOfInterest, location)
@@ -51,8 +51,8 @@ package object locator {
     val c = 2 * atan2(sqrt(a), sqrt(1 - a))
     val distanceBetweenAreaOfInterestAndLocation = earthRadiusInMeters * c
     logger.info("**************************************************")
-    logger.info(s"area of interest: $areaOfInterest")
-    logger.info(s"location: $location")
+    logger.info(s"$areaOfInterest")
+    logger.info(s"$location")
     logger.info(s"delta distance: $distanceBetweenAreaOfInterestAndLocation radius: ${areaOfInterest.radius}")
     logger.info("**************************************************")
     if (distanceBetweenAreaOfInterestAndLocation < areaOfInterest.radius)
