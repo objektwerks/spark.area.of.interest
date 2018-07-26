@@ -29,8 +29,6 @@ object LocatorApp extends App {
     .schema(locationStructType)
     .csv("./data/location")
     .as[Location]
-
-  val job = locations
     .filter(location => location.locationAt > ThirtyDaysHence)
     .map(location => locationToAreaOfInterests(location))
     .as[Map[AreaOfInterest, Location]]
@@ -38,5 +36,5 @@ object LocatorApp extends App {
     .foreach(mapLocationToAreaOfInterestsForeachWriter)
     .start()
 
-  job.awaitTermination
+  locations.awaitTermination
 }
