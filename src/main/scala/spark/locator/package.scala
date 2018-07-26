@@ -30,14 +30,14 @@ package object locator {
                                   (location: Location): Map[Location, List[AreaOfInterest]] = {
     Map(location -> areaOfInterests
       .flatMap { areaOfInterest =>
-        isLocationWithinAreaOfInterest(areaOfInterest, location)
+        isLocationWithinAreaOfInterest(location, areaOfInterest)
       })
   }
   /**
     * Haversine Algo
     */
-  private def isLocationWithinAreaOfInterest(areaOfInterest: AreaOfInterest,
-                                             location: Location): Option[AreaOfInterest] = {
+  private def isLocationWithinAreaOfInterest(location: Location,
+                                             areaOfInterest: AreaOfInterest): Option[AreaOfInterest] = {
     val deltaLatitude = (location.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (location.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -51,13 +51,13 @@ package object locator {
           cos(locationLatitudeInRadians)
     }
     val c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    val distanceBetweenAreaOfInterestAndLocation = earthRadiusInMeters * c
+    val distanceBetweenLocationAndAreaOfInterest = earthRadiusInMeters * c
     logger.info("**************************************************")
-    logger.info(s"$areaOfInterest")
     logger.info(s"$location")
-    logger.info(s"delta distance: $distanceBetweenAreaOfInterestAndLocation radius: ${areaOfInterest.radius}")
+    logger.info(s"$areaOfInterest")
+    logger.info(s"delta distance: $distanceBetweenLocationAndAreaOfInterest radius: ${areaOfInterest.radius}")
     logger.info("**************************************************")
-    if (distanceBetweenAreaOfInterestAndLocation < areaOfInterest.radius)
+    if (distanceBetweenLocationAndAreaOfInterest < areaOfInterest.radius)
       Some(areaOfInterest)
     else None
   }
