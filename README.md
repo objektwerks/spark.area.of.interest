@@ -16,7 +16,7 @@ Flow
 
 Sink
 ----
-1. Location-to-AreasOfInterest map to log
+1. Location -> AreasOfInterest map to log
 
 Run
 ---
