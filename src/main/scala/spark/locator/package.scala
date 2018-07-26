@@ -11,13 +11,15 @@ package object locator {
   private val earthRadiusInMeters = 6371 * 1000
 
   val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(30)).toEpochMilli
-  val mapLocationToAreaOfInterestsForeachWriter = new ForeachWriter[Map[AreaOfInterest, Location]] {
+  val mapLocationToAreaOfInterestsForeachWriter = new ForeachWriter[Map[Location, List[AreaOfInterest]]] {
     override def open(partitionId: Long, version: Long): Boolean = true
-    override def process(map: Map[AreaOfInterest, Location]): Unit = {
+    override def process(locations: Map[Location, List[AreaOfInterest]]): Unit = {
       logger.info("**************************************************")
-      map.foreach { case (areaOfInterest, location) =>
-        logger.info(s"$areaOfInterest")
-        logger.info(s"\t$location")
+      locations.foreach { case (location, areaOfInterests) =>
+        logger.info(s"$location")
+        areaOfInterests.foreach { areaOfInterest =>
+          logger.info(s"\t$areaOfInterest")
+        }
       }
       logger.info("**************************************************")
     }
@@ -25,17 +27,17 @@ package object locator {
   }
 
   def mapLocationToAreaOfInterests(areaOfInterests: List[AreaOfInterest])
-                                  (location: Location): Map[AreaOfInterest, Location] = {
-    areaOfInterests
+                                  (location: Location): Map[Location, List[AreaOfInterest]] = {
+    Map(location -> areaOfInterests
       .flatMap { areaOfInterest =>
         isLocationWithinAreaOfInterest(areaOfInterest, location)
-      }.toMap
+      })
   }
   /**
     * Haversine Algo
     */
   private def isLocationWithinAreaOfInterest(areaOfInterest: AreaOfInterest,
-                                             location: Location): Option[(AreaOfInterest, Location)] = {
+                                             location: Location): Option[AreaOfInterest] = {
     val deltaLatitude = (location.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (location.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -56,7 +58,7 @@ package object locator {
     logger.info(s"delta distance: $distanceBetweenAreaOfInterestAndLocation radius: ${areaOfInterest.radius}")
     logger.info("**************************************************")
     if (distanceBetweenAreaOfInterestAndLocation < areaOfInterest.radius)
-      Some((areaOfInterest, location))
+      Some(areaOfInterest)
     else None
   }
 }

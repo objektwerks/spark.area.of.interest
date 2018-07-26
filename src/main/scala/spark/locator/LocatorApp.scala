@@ -31,7 +31,7 @@ object LocatorApp extends App {
     .as[Location]
     .filter(location => location.locationAt > ThirtyDaysHence)
     .map(location => locationToAreaOfInterests(location))
-    .as[Map[AreaOfInterest, Location]]
+    .as[Map[Location, List[AreaOfInterest]]]
     .writeStream
     .foreach(mapLocationToAreaOfInterestsForeachWriter)
     .start()
