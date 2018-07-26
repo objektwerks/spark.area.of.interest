@@ -11,7 +11,7 @@ object LocatorApp extends App {
   }
 
   import AreaOfInterest._
-  val areasOfInterests = sparkSession
+  val areasOfInterest = sparkSession
     .read
     .option("header", true)
     .schema(areaOfInterestStructType)
@@ -19,7 +19,7 @@ object LocatorApp extends App {
     .as[AreaOfInterest]
     .collect
     .toList
-  val locationToAreaOfInterests = mapLocationToAreaOfInterests(areasOfInterests)(_:Location)
+  val locationToAreaOfInterests = mapLocationToAreaOfInterests(areasOfInterest)(_:Location)
 
   import Location._
   val locations = sparkSession
