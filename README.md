@@ -4,13 +4,13 @@ Spark Area of Interest
 
 Source
 ------
-1. AreaOfInterest : csv : (id: String, latitude: Double, longitude: Double, radius: Double)
+1. AreaOfInterest : csv : (id: String, latitude: Double, longitude: Double)
 2. Hit : csv : (id: String, utc: Long, latitude: Double, longitude: Double)
 
 Flow
 ----
 1. Hits **n-days** hence
-2. Hits **n-kilometers** within radius of areas of interest
+2. Hits within **n-kilometer-radius** areas of interest
 
 Sink
 ----
