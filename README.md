@@ -10,7 +10,7 @@ Source
 Flow
 ----
 1. Hits **n-days** hence
-2. Hits within **n-kilometer-radius** areas of interest
+2. Hits within areas of interest defined by **n-kilometer-radius**
 
 Sink
 ----
