@@ -3,7 +3,7 @@ package spark.aoi
 import org.apache.spark.sql.SparkSession
 
 object AreaOfInterestApp extends App {
-  val sparkSession = SparkSession.builder.master("local[*]").appName("Locator").getOrCreate()
+  val sparkSession = SparkSession.builder.master("local[*]").appName("AreaOfInterest").getOrCreate()
   import sparkSession.implicits._
 
   sys.addShutdownHook {
