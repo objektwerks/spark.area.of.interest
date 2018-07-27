@@ -1,5 +1,3 @@
-name,latitude,longitude,radius
-fred,26.850343,-82.294261,13000
-wilma,26.850343,-82.294261,13000
-barney,26.749015,-82.261672,13000
-betty,26.749015,-82.261672,13000
+id,latitude,longitude,radius
+ace hardware,26.859812,-82.298734,15
+publix,26.853651,-82.289676,15

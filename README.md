@@ -1,22 +1,20 @@
-Spark Locator
--------------
->App that maps locations by date range and meter radius to a set of areas-of-interest.
+Spark Area of Interest
+----------------------
+>App that identifies hits with an area of interest.
 
 Source
 ------
-1. Location **parquet** records   (advertiserId: String, locationAt: Long, latitude: Double, longitude: Double)
-2. AreaOfInterest **csv** records (name: String, latitude: Double, longitude: Double, radius: Double)
-
-**Parquet formatted Location records will be supported at a future time.**
+1. AreaOfInterest : csv : (id: String, latitude: Double, longitude: Double, radius: Double)
+2. Hit : csv : (id: String, utc: Long, latitude: Double, longitude: Double)
 
 Flow
 ----
-1. Locations within a **n-day** period
-2. Locations within a **n-meter** radius of locations within a set of AreaOfInterests
+1. Hits within an **n-day** period
+2. Hits within an **n-kilometer** radius of an area of interest(s)
 
 Sink
 ----
-1. Location -> AreasOfInterest map to log
+1. AreasOfInterest * ---> 1 Hit map to log
 
 Run
 ---

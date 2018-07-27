@@ -1,3 +1,0 @@
-advertiserId,locationAt,latitude,longitude
-ace hardware,1532429883757,26.859812,-82.298734
-publix,1532433155483,26.853651,-82.289676

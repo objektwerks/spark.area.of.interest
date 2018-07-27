@@ -1,4 +1,4 @@
-name := "spark.locator"
+name := "spark.aoi"
 organization := "objektwerks"
 version := "0.1"
 scalaVersion := "2.11.12"
