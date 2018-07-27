@@ -1,19 +1,12 @@
 package spark.aoi
 
-import java.time.{Duration, Instant}
-
 import org.apache.spark.sql.SparkSession
 
 import scala.util.Try
 
 object AreaOfInterestApp extends App {
-  val areaOfInterestRadiusInKilometers = Try {
-    args(0).toDouble
-  }.toOption.getOrElse(25.0)
-
-  val hitDaysHence = Try {
-    Instant.now.minus(Duration.ofDays(args(1).toInt)).toEpochMilli
-  }.toOption.getOrElse(Instant.now.minus(Duration.ofDays(365)).toEpochMilli)
+  val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
+  val hitDaysHence = Try(daysToEpochMillis(args(1).toInt)).getOrElse(daysToEpochMillis(365))
 
   val sparkSession = SparkSession.builder.master("local[*]").appName("AreaOfInterest").getOrCreate()
   import sparkSession.implicits._
