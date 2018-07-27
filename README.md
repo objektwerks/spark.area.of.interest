@@ -1,6 +1,6 @@
 Spark Area of Interest
 ----------------------
->App that identifies hits within an area of interest.
+>App that identifies hits within areas of interest.
 
 Source
 ------
@@ -9,12 +9,12 @@ Source
 
 Flow
 ----
-1. Hits within an **n-day** period
-2. Hits within an **n-kilometer** radius of an area of interest(s)
+1. Hits **n-days** hence
+2. Hits **n-kilometer** within areas of interest
 
 Sink
 ----
-1. AreasOfInterest * ---> 1 Hit map to log
+1. Map[AreasOfInterest, Hit] to log
 
 Run
 ---
