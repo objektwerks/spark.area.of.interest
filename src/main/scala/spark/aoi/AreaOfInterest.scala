@@ -2,7 +2,7 @@ package spark.aoi
 
 import org.apache.spark.sql.Encoders
 
-case class AreaOfInterest(id: String, latitude: Double, longitude: Double, radius: Double)
+case class AreaOfInterest(id: String, latitude: Double, longitude: Double)
 
 object AreaOfInterest {
   val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema

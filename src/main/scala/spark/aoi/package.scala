@@ -1,7 +1,6 @@
 package spark
 
 import java.lang.Math.{atan2, cos, sin, sqrt}
-import java.time.{Duration, Instant}
 
 import org.apache.log4j.Logger
 import org.apache.spark.sql.ForeachWriter
@@ -9,8 +8,6 @@ import org.apache.spark.sql.ForeachWriter
 package object aoi {
   private val logger = Logger.getLogger(this.getClass)
   private val earthRadiusInKilometers = 6371
-
-  val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(6575)).toEpochMilli
 
   val areaOfInterestsToHitForeachWriter = new ForeachWriter[Map[AreaOfInterest, Hit]] {
     override def open(partitionId: Long, version: Long): Boolean = true
@@ -25,16 +22,17 @@ package object aoi {
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
-  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest])(hit: Hit): Map[AreaOfInterest, Hit] = {
+  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], radius: Double)
+                             (hit: Hit): Map[AreaOfInterest, Hit] = {
     areaOfInterests.flatMap { areaOfInterest =>
-      isHitWithinAreaOfInterest(hit, areaOfInterest).map(hit => areaOfInterest -> hit)
+      isHitWithinAreaOfInterest(hit, areaOfInterest, radius).map(hit => areaOfInterest -> hit)
     }.toMap
   }
 
   /**
     * Haversine Algo
     */
-  private def isHitWithinAreaOfInterest(hit: Hit, areaOfInterest: AreaOfInterest): Option[Hit] = {
+  private def isHitWithinAreaOfInterest(hit: Hit, areaOfInterest: AreaOfInterest, radius: Double): Option[Hit] = {
     val deltaLatitude = (hit.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (hit.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -52,8 +50,8 @@ package object aoi {
     logger.info("**************************************************")
     logger.info(s"$hit")
     logger.info(s"$areaOfInterest")
-    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: ${areaOfInterest.radius}")
+    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: $radius")
     logger.info("**************************************************")
-    if (distanceBetweenHitAndAreaOfInterest < areaOfInterest.radius) Some(hit) else None
+    if (distanceBetweenHitAndAreaOfInterest < radius) Some(hit) else None
   }
 }

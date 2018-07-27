@@ -18,7 +18,12 @@ Sink
 
 Run
 ---
-1. sbt clean compile run
+1. sbt clean compile run 30 25.0
+
+AreaOfInterestApp takes 2 commandline args.
+1. daysHence ( defaults to 365)
+2. radius ( defaults to 25.0 )
+In the example above, 30 = daysHence, 15.0 = radius
 
 Web
 ---
