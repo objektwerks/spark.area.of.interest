@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
 import scala.util.Try
 
 object AreaOfInterestApp extends App {
-  val areaOfInterestRadius = Try {
+  val areaOfInterestRadiusInKilometers = Try {
     args(0).toDouble
   }.toOption.getOrElse(25.0)
 
@@ -31,7 +31,7 @@ object AreaOfInterestApp extends App {
     .as[AreaOfInterest]
     .collect
     .toList
-  val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadius)(_:Hit)
+  val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
   import Hit._
   val hits = sparkSession

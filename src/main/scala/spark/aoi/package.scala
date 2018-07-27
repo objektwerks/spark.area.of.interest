@@ -22,10 +22,10 @@ package object aoi {
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
-  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], areaOfInterestRadius: Double)
+  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
                              (hit: Hit): Map[AreaOfInterest, Hit] = {
     areaOfInterests.flatMap { areaOfInterest =>
-      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadius).map(hit => areaOfInterest -> hit)
+      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers).map(hit => areaOfInterest -> hit)
     }.toMap
   }
 
@@ -34,7 +34,7 @@ package object aoi {
     */
   private def isHitWithinAreaOfInterest(hit: Hit,
                                         areaOfInterest: AreaOfInterest,
-                                        areaOfInterestRadius: Double): Option[Hit] = {
+                                        areaOfInterestRadiusInKilometers: Double): Option[Hit] = {
     val deltaLatitude = (hit.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (hit.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -52,8 +52,8 @@ package object aoi {
     logger.info("**************************************************")
     logger.info(s"$hit")
     logger.info(s"$areaOfInterest")
-    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: $areaOfInterestRadius")
+    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: $areaOfInterestRadiusInKilometers")
     logger.info("**************************************************")
-    if (distanceBetweenHitAndAreaOfInterest < areaOfInterestRadius) Some(hit) else None
+    if (distanceBetweenHitAndAreaOfInterest < areaOfInterestRadiusInKilometers) Some(hit) else None
   }
 }
