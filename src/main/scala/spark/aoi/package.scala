@@ -30,6 +30,7 @@ package object aoi {
       isHitWithinAreaOfInterest(hit, areaOfInterest).map(hit => areaOfInterest -> hit)
     }.toMap
   }
+
   /**
     * Haversine Algo
     */
