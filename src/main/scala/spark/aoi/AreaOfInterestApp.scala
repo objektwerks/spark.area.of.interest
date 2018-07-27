@@ -22,7 +22,6 @@ object AreaOfInterestApp extends App {
     sparkSession.stop
   }
 
-  import AreaOfInterest._
   val areasOfInterest = sparkSession
     .read
     .option("header", true)
@@ -33,7 +32,6 @@ object AreaOfInterestApp extends App {
     .toList
   val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
-  import Hit._
   val hits = sparkSession
     .readStream
     .option("basePath", "./data/hits")

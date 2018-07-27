@@ -3,11 +3,14 @@ package spark
 import java.lang.Math.{atan2, cos, sin, sqrt}
 
 import org.apache.log4j.Logger
-import org.apache.spark.sql.ForeachWriter
+import org.apache.spark.sql.{Encoders, ForeachWriter}
 
 package object aoi {
   private val logger = Logger.getLogger(this.getClass)
   private val earthRadiusInKilometers = 6371
+
+  val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema
+  val hitStructType = Encoders.product[Hit].schema
 
   val areaOfInterestsToHitForeachWriter = new ForeachWriter[Map[AreaOfInterest, Hit]] {
     override def open(partitionId: Long, version: Long): Boolean = true

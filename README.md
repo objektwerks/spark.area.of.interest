@@ -21,12 +21,8 @@ Run
 1. sbt clean compile run 15.0 30
 
 >AreaOfInterestApp takes **2** commandline args.
-1. areaOfInterestRadiusInKilometers ( defaults to 25.0 )
-2. hitDaysHence ( defaults to 365 )
-
->In the example above:
-1. 15.0 = areaOfInterestRadiusInKilometers
-2. 30 = hitDaysHence
+1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
+2. hitDaysHence ( 30 in above example, defaults to 365 )
 
 Web
 ---
