@@ -22,17 +22,19 @@ package object aoi {
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
-  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], radius: Double)
+  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], areaOfInterestRadius: Double)
                              (hit: Hit): Map[AreaOfInterest, Hit] = {
     areaOfInterests.flatMap { areaOfInterest =>
-      isHitWithinAreaOfInterest(hit, areaOfInterest, radius).map(hit => areaOfInterest -> hit)
+      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadius).map(hit => areaOfInterest -> hit)
     }.toMap
   }
 
   /**
     * Haversine Algo
     */
-  private def isHitWithinAreaOfInterest(hit: Hit, areaOfInterest: AreaOfInterest, radius: Double): Option[Hit] = {
+  private def isHitWithinAreaOfInterest(hit: Hit,
+                                        areaOfInterest: AreaOfInterest,
+                                        areaOfInterestRadius: Double): Option[Hit] = {
     val deltaLatitude = (hit.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (hit.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -50,8 +52,8 @@ package object aoi {
     logger.info("**************************************************")
     logger.info(s"$hit")
     logger.info(s"$areaOfInterest")
-    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: $radius")
+    logger.info(s"delta distance: $distanceBetweenHitAndAreaOfInterest radius: $areaOfInterestRadius")
     logger.info("**************************************************")
-    if (distanceBetweenHitAndAreaOfInterest < radius) Some(hit) else None
+    if (distanceBetweenHitAndAreaOfInterest < areaOfInterestRadius) Some(hit) else None
   }
 }

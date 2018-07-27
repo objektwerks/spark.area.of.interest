@@ -7,13 +7,13 @@ import org.apache.spark.sql.SparkSession
 import scala.util.Try
 
 object AreaOfInterestApp extends App {
-  val daysHence = Try {
-    Instant.now.minus(Duration.ofDays(args(0).toInt)).toEpochMilli
-  }.toOption.getOrElse(Instant.now.minus(Duration.ofDays(365)).toEpochMilli)
-
-  val radius = Try {
-    args(1).toDouble
+  val areaOfInterestRadius = Try {
+    args(0).toDouble
   }.toOption.getOrElse(25.0)
+
+  val hitDaysHence = Try {
+    Instant.now.minus(Duration.ofDays(args(1).toInt)).toEpochMilli
+  }.toOption.getOrElse(Instant.now.minus(Duration.ofDays(365)).toEpochMilli)
 
   val sparkSession = SparkSession.builder.master("local[*]").appName("AreaOfInterest").getOrCreate()
   import sparkSession.implicits._
@@ -31,7 +31,7 @@ object AreaOfInterestApp extends App {
     .as[AreaOfInterest]
     .collect
     .toList
-  val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, radius)(_:Hit)
+  val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadius)(_:Hit)
 
   import Hit._
   val hits = sparkSession
@@ -41,7 +41,7 @@ object AreaOfInterestApp extends App {
     .schema(hitStructType)
     .csv("./data/hits")
     .as[Hit]
-    .filter(hit => hit.utc > daysHence)
+    .filter(hit => hit.utc > hitDaysHence)
     .map(hit => areaOfInterestsToHit(hit))
     .as[Map[AreaOfInterest, Hit]]
     .writeStream
