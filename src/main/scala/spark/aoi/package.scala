@@ -10,7 +10,7 @@ package object aoi {
   private val logger = Logger.getLogger(this.getClass)
   private val earthRadiusInKilometers = 6371
 
-  val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(30)).toEpochMilli
+  val ThirtyDaysHence = Instant.now.minus(Duration.ofDays(6575)).toEpochMilli
 
   val areaOfInterestsToHitForeachWriter = new ForeachWriter[Map[AreaOfInterest, Hit]] {
     override def open(partitionId: Long, version: Long): Boolean = true
