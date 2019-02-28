@@ -26,7 +26,7 @@ package object aoi {
     override def close(errorOrNull: Throwable): Unit = ()
   }
 
-  def daysToEpochMillis(days: Int): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
+  def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
   def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
                              (hit: Hit): Map[AreaOfInterest, Hit] = {

@@ -6,7 +6,7 @@ import scala.util.Try
 
 object AreaOfInterestApp extends App {
   val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
-  val hitDaysHence = Try(daysToEpochMillis(args(1).toInt)).getOrElse(daysToEpochMillis(365))
+  val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(365))
 
   val sparkSession = SparkSession.builder.master("local[*]").appName("AreaOfInterest").getOrCreate()
   import sparkSession.implicits._
