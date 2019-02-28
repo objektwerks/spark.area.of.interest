@@ -8,7 +8,6 @@ libraryDependencies ++= {
     "org.apache.spark" %% "spark-core" % sparkVersion,
     "org.apache.spark" %% "spark-streaming" % sparkVersion,
     "org.apache.spark" %% "spark-sql" % sparkVersion,
-    "org.slf4j" % "slf4j-api" % "1.7.25",
     "org.scalatest" %% "scalatest" % "3.0.5" % Test
   )
 }
