@@ -45,5 +45,5 @@ object AreaOfInterestApp extends App {
     .foreach(areaOfInterestsToHitForeachWriter)
     .start()
 
-  hits.awaitTermination
+  hits.awaitTermination(30000L)
 }

@@ -32,6 +32,6 @@ Stop
 ----
 1. Control-C
  
-Output
-------
+Log
+---
 1. ./target/app.log
