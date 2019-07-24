@@ -24,9 +24,10 @@ Run
 1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
 2. hitDaysHence ( 30 in above example, defaults to 365 )
 
-Web
----
-1. http://192.168.1.8:4040
+UI
+--
+1. SparkUI : localhost:4040
+2. History Server UI : localhost:18080
 
 Stop
 ----
@@ -35,3 +36,7 @@ Stop
 Log
 ---
 1. ./target/app.log
+
+Events
+------
+1. /tmp/spark-events

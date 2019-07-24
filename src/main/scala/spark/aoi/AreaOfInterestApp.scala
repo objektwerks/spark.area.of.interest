@@ -14,12 +14,17 @@ object AreaOfInterestApp extends App {
     .builder
     .master(conf.getString("master"))
     .appName(conf.getString("name"))
+    .config("spark.eventLog.enabled", true)
+    .config("spark.eventLog.dir", "/tmp/spark-events")
     .getOrCreate()
-  import sparkSession.implicits._
+  println("Initialized Spark AreaOfInterestApp. Press Ctrl C to terminate.")
 
   sys.addShutdownHook {
     sparkSession.stop
+    println("Terminated Spark AreaOfInterestApp.")
   }
+
+  import sparkSession.implicits._
 
   val areasOfInterest = sparkSession
     .read
@@ -29,6 +34,7 @@ object AreaOfInterestApp extends App {
     .as[AreaOfInterest]
     .collect
     .toList
+
   val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
   val hits = sparkSession
@@ -43,7 +49,7 @@ object AreaOfInterestApp extends App {
     .as[Map[AreaOfInterest, Hit]]
     .writeStream
     .foreach(areaOfInterestsToHitForeachWriter)
-    .start()
+    .start
 
-  hits.awaitTermination(30000L)
+  hits.awaitTermination
 }
