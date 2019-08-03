@@ -23,7 +23,7 @@ Run
 Submit
 ------
 1. sbt clean compile package
-2. ./run.sh
+2. ./submit.sh
 
 >AreaOfInterestApp takes **2** commandline args.
 1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
