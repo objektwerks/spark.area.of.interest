@@ -18,8 +18,7 @@ Sink
 
 Run
 ---
-1. mkdir /tmp/spark-events { Only required once if nonexistent }
-2. sbt clean compile run 15.0 30
+1. sbt clean compile run 15.0 30
 
 >AreaOfInterestApp takes **2** commandline args.
 1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )

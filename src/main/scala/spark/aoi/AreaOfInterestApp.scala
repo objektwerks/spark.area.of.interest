@@ -10,12 +10,16 @@ object AreaOfInterestApp extends App {
   val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
   val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(365))
 
+  val sparkEventLogDir = conf.getString("spark.eventLog.dir")
+  val sparkEventDirCreated = createSparkEventsDir(sparkEventLogDir)
+  println(s"*** $sparkEventLogDir exists or was created: $sparkEventDirCreated")
+
   val sparkSession = SparkSession
     .builder
     .master(conf.getString("master"))
     .appName(conf.getString("name"))
     .config("spark.eventLog.enabled", conf.getBoolean("spark.eventLog.enabled"))
-    .config("spark.eventLog.dir", conf.getString("spark.eventLog.dir"))
+    .config("spark.eventLog.dir", sparkEventLogDir)
     .getOrCreate()
   println("Initialized Spark AreaOfInterestApp. Press Ctrl C to terminate.")
 

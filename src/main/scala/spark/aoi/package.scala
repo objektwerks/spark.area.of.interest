@@ -6,6 +6,8 @@ import java.time.{Duration, Instant}
 import org.apache.log4j.Logger
 import org.apache.spark.sql.{Encoders, ForeachWriter}
 
+import scala.util.Try
+
 package object aoi {
   private val logger = Logger.getLogger(this.getClass)
   private val earthRadiusInKilometers = 6371
@@ -24,6 +26,14 @@ package object aoi {
       logger.info("**************************************************")
     }
     override def close(errorOrNull: Throwable): Unit = ()
+  }
+
+  def createSparkEventsDir(dir: String): Boolean = {
+    import java.nio.file.{Files, Paths}
+    val path = Paths.get(dir)
+    if (!Files.exists(path))
+      Try ( Files.createDirectories(path) ).isSuccess
+    else true
   }
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
