@@ -20,6 +20,11 @@ Run
 ---
 1. sbt clean compile run 15.0 30
 
+Submit
+------
+1. sbt clean compile package
+2. ./run.sh
+
 >AreaOfInterestApp takes **2** commandline args.
 1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
 2. hitDaysHence ( 30 in above example, defaults to 365 )

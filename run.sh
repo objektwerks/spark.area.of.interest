@@ -1,5 +1,5 @@
 #!/bin/sh
-spark/bin/spark-submit \
+spark-submit \
   --class aoi.AreaOfInterestApp \
   --master local[2] \
   --packages com.typesafe:config:1.3.4 \
