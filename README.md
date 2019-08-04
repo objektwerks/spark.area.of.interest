@@ -29,6 +29,8 @@ Submit
 2. chmod +x submit.sh ( required only once )
 3. ./submit.sh
 
+>WARNING: Requires correct Scala version vis-a-vis Spark version to run correctly.
+
 >AreaOfInterestApp takes **2** commandline args.
 1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
 2. hitDaysHence ( 30 in above example, defaults to 365 )
