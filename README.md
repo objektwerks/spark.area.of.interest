@@ -1,6 +1,6 @@
 Spark Area of Interest
 ----------------------
->App that identifies hits within areas of interest
+>App that identifies hits within areas of interest.
 
 Source
 ------
