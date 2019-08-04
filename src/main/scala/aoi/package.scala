@@ -1,5 +1,3 @@
-package spark
-
 import java.lang.Math.{atan2, cos, sin, sqrt}
 import java.time.{Duration, Instant}
 

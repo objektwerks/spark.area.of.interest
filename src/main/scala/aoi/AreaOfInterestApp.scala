@@ -1,4 +1,4 @@
-package spark.aoi
+package aoi
 
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.SparkSession

@@ -1,4 +1,4 @@
-package spark.aoi
+package aoi
 
 case class AreaOfInterest(id: String, latitude: Double, longitude: Double)
 
