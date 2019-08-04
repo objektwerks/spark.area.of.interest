@@ -22,6 +22,9 @@ Run
 
 Submit
 ------
+>First create a log4j.properties file from log4j.properties.template.
+>See: /usr/local/Cellar/apache-spark/2.4.3/libexec/conf/log4j.properties.template
+
 1. sbt clean compile package
 2. chmod +x submit.sh ( required only once )
 3. ./submit.sh
