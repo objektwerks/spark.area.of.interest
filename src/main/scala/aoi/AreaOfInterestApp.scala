@@ -23,11 +23,11 @@ object AreaOfInterestApp {
       .config("spark.eventLog.enabled", conf.getBoolean("spark.eventLog.enabled"))
       .config("spark.eventLog.dir", sparkEventLogDir)
       .getOrCreate()
-    println("Initialized Spark AreaOfInterestApp. Press Ctrl C to terminate.")
+    println("*** Initialized Spark AreaOfInterestApp. Press Ctrl C to terminate.")
 
     sys.addShutdownHook {
       sparkSession.stop
-      println("Terminated Spark AreaOfInterestApp.")
+      println("*** Terminated Spark AreaOfInterestApp.")
     }
 
     import sparkSession.implicits._
