@@ -18,7 +18,8 @@ Sink
 
 Run
 ---
-1. sbt clean compile run 15.0 30
+1. sbt clean compile
+2. sbt "run 30.0 999"
 
 Submit
 ------
