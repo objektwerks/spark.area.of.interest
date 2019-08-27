@@ -20,6 +20,7 @@ object AreaOfInterestApp {
       .builder
       .master(conf.getString("master"))
       .appName(conf.getString("name"))
+      .config("spark.serializer", conf.getString("spark.serializer"))
       .config("spark.eventLog.enabled", conf.getBoolean("spark.eventLog.enabled"))
       .config("spark.eventLog.dir", sparkEventLogDir)
       .getOrCreate()
