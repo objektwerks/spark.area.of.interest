@@ -75,7 +75,6 @@ object AreaOfInterestApp {
       .foreach(areaOfInterestsToHitForeachWriter)
       .start
     hits.awaitTermination
-
     ()
   }
 }
