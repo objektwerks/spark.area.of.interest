@@ -22,12 +22,12 @@ object AreaOfInterest {
   val areaOfInterestsToHitForeachWriter = new ForeachWriter[Map[AreaOfInterest, Hit]] {
     override def open(partitionId: Long, version: Long): Boolean = true
     override def process(areasOfInterest: Map[AreaOfInterest, Hit]): Unit = {
-      logger.info("**************************************************")
       areasOfInterest.foreach { case (areaOfInterest, hit) =>
+        logger.info("++++++++++++++++++++++++++++++++++++++++++++++++++")
         logger.info(s"$areaOfInterest")
         logger.info(s"$hit")
+        logger.info("++++++++++++++++++++++++++++++++++++++++++++++++++")
       }
-      logger.info("**************************************************")
     }
     override def close(errorOrNull: Throwable): Unit = ()
   }
