@@ -11,8 +11,9 @@ object AreaOfInterestApp {
   private val logger = Logger.getLogger(this.getClass)
 
   def main(args: Array[String]): Unit = {
-    logger.info(s"*** Main args(0): ${args(0)}")
-    logger.info(s"*** Main args(1): ${args(1)}")
+    import AreaOfInterest._
+
+    logger.info(s"*** Main args(0): ${args(0)} : args(1): ${args(1)}")
     val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
     val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(365))
     logger.info(s"*** areaOfInterestRadiusInKilometers: $areaOfInterestRadiusInKilometers")
@@ -58,9 +59,7 @@ object AreaOfInterestApp {
 
     logger.info(s"*** Areas of Interest: ${areasOfInterest.toString}")
 
-    val broadcastAreaOfInterest = sparkSession
-      .sparkContext
-      .broadcast(mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit))
+    val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
     val hits = sparkSession
       .readStream
@@ -71,7 +70,7 @@ object AreaOfInterestApp {
       .csv(conf.getString("hits"))
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
-      .map(hit => broadcastAreaOfInterest.value(hit))
+      .map(hit => areaOfInterestsToHit(hit))
       .as[Map[AreaOfInterest, Hit]]
       .writeStream
       .foreach(areaOfInterestsToHitForeachWriter)
