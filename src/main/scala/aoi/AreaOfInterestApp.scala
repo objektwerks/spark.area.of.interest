@@ -62,7 +62,7 @@ object AreaOfInterestApp {
       .readStream
       .option("basePath", conf.getString("hits"))
       .option("header", true)
-      .option("delimiter",",")
+      .option("delimiter", ",")
       .schema(hitStructType)
       .csv(conf.getString("hits"))
       .as[Hit]
