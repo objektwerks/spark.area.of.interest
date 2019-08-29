@@ -4,13 +4,16 @@ import java.lang.Math.{atan2, cos, sin, sqrt}
 import java.time.{Duration, Instant}
 
 import org.apache.log4j.Logger
-import org.apache.spark.sql.{Encoders, ForeachWriter}
+import org.apache.spark.sql.Encoders
 
+import scala.collection.mutable
 import scala.util.Try
 
 case class AreaOfInterest(id: String, latitude: Double, longitude: Double)
 
 case class Hit(id: String, utc: Long, latitude: Double, longitude: Double)
+
+case class HitAreaOfInterests(hitId: String, aoiIds: Array[String])
 
 object AreaOfInterest {
   private val logger = Logger.getLogger(this.getClass)
@@ -18,19 +21,7 @@ object AreaOfInterest {
 
   val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema
   val hitStructType = Encoders.product[Hit].schema
-
-  val areaOfInterestsToHitForeachWriter = new ForeachWriter[Map[AreaOfInterest, Hit]] {
-    override def open(partitionId: Long, version: Long): Boolean = true
-    override def process(areasOfInterest: Map[AreaOfInterest, Hit]): Unit = {
-      areasOfInterest.foreach { case (areaOfInterest, hit) =>
-        logger.info("++++++++++++++++++++++++++++++++++++++++++++++++++")
-        logger.info(s"$areaOfInterest")
-        logger.info(s"$hit")
-        logger.info("++++++++++++++++++++++++++++++++++++++++++++++++++")
-      }
-    }
-    override def close(errorOrNull: Throwable): Unit = ()
-  }
+  val hitAreaOfInterests = Encoders.product[HitAreaOfInterests]
 
   def createSparkEventsDir(dir: String): Boolean = {
     import java.nio.file.{Files, Paths}
@@ -42,11 +33,13 @@ object AreaOfInterest {
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
   def mapAreaOfInterestsToHit(areaOfInterests: Array[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
-                             (hit: Hit): Map[AreaOfInterest, Hit] = {
-    areaOfInterests.flatMap { areaOfInterest =>
-      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers)
-        .map(hit => areaOfInterest -> hit)
-    }.toMap
+                             (hit: Hit): HitAreaOfInterests = {
+    val buffer = new mutable.ArrayBuffer[String]
+    areaOfInterests.foreach { areaOfInterest =>
+      if (isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers)) buffer += areaOfInterest.id
+      ()
+    }
+    HitAreaOfInterests(hit.id, buffer.toArray)
   }
 
   /**
@@ -54,7 +47,7 @@ object AreaOfInterest {
     */
   private def isHitWithinAreaOfInterest(hit: Hit,
                                         areaOfInterest: AreaOfInterest,
-                                        areaOfInterestRadiusInKilometers: Double): Option[Hit] = {
+                                        areaOfInterestRadiusInKilometers: Double): Boolean = {
     val deltaLatitude = (hit.latitude - areaOfInterest.latitude).toRadians
     val deltaLongitude = (hit.longitude - areaOfInterest.longitude).toRadians
     val areaOfInterestLatitudeInRadians = areaOfInterest.latitude.toRadians
@@ -69,14 +62,14 @@ object AreaOfInterest {
     }
     val c = 2 * atan2(sqrt(a), sqrt(1 - a))
     val distanceBetweenHitAndAreaOfInterest = earthRadiusInKilometers * c
-    val isHit = if (distanceBetweenHitAndAreaOfInterest < areaOfInterestRadiusInKilometers) Some(hit) else None
-    logger.info("**************************************************")
-    logger.info(s"$areaOfInterest")
+    val isHit = if (distanceBetweenHitAndAreaOfInterest < areaOfInterestRadiusInKilometers) true else false
+    logger.info("--------------------------------------------------")
+    logger.info(s"Hit = $isHit")
     logger.info(s"$hit")
-    logger.info(s"Hit? ${isHit.isDefined}")
+    logger.info(s"$areaOfInterest")
     logger.info(s"Delta: $distanceBetweenHitAndAreaOfInterest")
     logger.info(s"Radius: $areaOfInterestRadiusInKilometers")
-    logger.info("**************************************************")
+    logger.info("--------------------------------------------------")
     isHit
   }
 }

@@ -56,8 +56,6 @@ object AreaOfInterestApp {
       .as[AreaOfInterest]
       .collect
 
-    logger.info(s"*** Areas of Interest: ${areasOfInterest.toString}")
-
     val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
     val hits = sparkSession
@@ -70,9 +68,10 @@ object AreaOfInterestApp {
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
       .map(hit => areaOfInterestsToHit(hit))
-      .as[Map[AreaOfInterest, Hit]]
+      .as[HitAreaOfInterests]
       .writeStream
-      .foreach(areaOfInterestsToHitForeachWriter)
+      .format("console")
+      .option("truncate", "false")
       .start
     hits.awaitTermination
     ()
