@@ -50,7 +50,7 @@ object AreaOfInterestApp {
       .read
       .format("csv")
       .option("header", true)
-      .option("delimiter",",")
+      .option("delimiter", ",")
       .schema(areaOfInterestStructType)
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
