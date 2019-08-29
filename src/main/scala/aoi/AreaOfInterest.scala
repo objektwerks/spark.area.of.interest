@@ -41,10 +41,11 @@ object AreaOfInterest {
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
-  def mapAreaOfInterestsToHit(areaOfInterests: List[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
+  def mapAreaOfInterestsToHit(areaOfInterests: Array[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
                              (hit: Hit): Map[AreaOfInterest, Hit] = {
     areaOfInterests.flatMap { areaOfInterest =>
-      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers).map(hit => areaOfInterest -> hit)
+      isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers)
+        .map(hit => areaOfInterest -> hit)
     }.toMap
   }
 

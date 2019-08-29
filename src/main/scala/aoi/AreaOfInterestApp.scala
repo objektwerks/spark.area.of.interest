@@ -55,7 +55,6 @@ object AreaOfInterestApp {
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
       .collect
-      .toList // Replace with code that doesn't return a List to the driver!!!
 
     logger.info(s"*** Areas of Interest: ${areasOfInterest.toString}")
 
