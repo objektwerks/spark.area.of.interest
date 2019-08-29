@@ -56,7 +56,7 @@ object AreaOfInterestApp {
       .as[AreaOfInterest]
       .collect
 
-    val areaOfInterestsToHit = mapAreaOfInterestsToHit(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
+    val hitToAreaOfInterests = mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers)(_:Hit)
 
     val hits = sparkSession
       .readStream
@@ -67,8 +67,8 @@ object AreaOfInterestApp {
       .csv(conf.getString("hits"))
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
-      .map(hit => areaOfInterestsToHit(hit))
-      .as[HitAreaOfInterests]
+      .map(hit => hitToAreaOfInterests(hit))
+      .as[HitToAreaOfInterests]
       .writeStream
       .format("console")
       .option("truncate", "false")

@@ -13,7 +13,7 @@ case class AreaOfInterest(id: String, latitude: Double, longitude: Double)
 
 case class Hit(id: String, utc: Long, latitude: Double, longitude: Double)
 
-case class HitAreaOfInterests(hitId: String, aoiIds: Array[String])
+case class HitToAreaOfInterests(hitId: String, aoiIds: Array[String])
 
 object AreaOfInterest {
   private val logger = Logger.getLogger(this.getClass)
@@ -21,7 +21,7 @@ object AreaOfInterest {
 
   val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema
   val hitStructType = Encoders.product[Hit].schema
-  val hitAreaOfInterests = Encoders.product[HitAreaOfInterests]
+  val hitToAreaOfInterests = Encoders.product[HitToAreaOfInterests]
 
   def createSparkEventsDir(dir: String): Boolean = {
     import java.nio.file.{Files, Paths}
@@ -32,14 +32,14 @@ object AreaOfInterest {
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
-  def mapAreaOfInterestsToHit(areaOfInterests: Array[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
-                             (hit: Hit): HitAreaOfInterests = {
+  def mapHitToAreaOfInterests(areaOfInterests: Array[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
+                             (hit: Hit): HitToAreaOfInterests = {
     val buffer = new mutable.ArrayBuffer[String]
     areaOfInterests.foreach { areaOfInterest =>
       if (isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers)) buffer += areaOfInterest.id
       ()
     }
-    HitAreaOfInterests(hit.id, buffer.toArray)
+    HitToAreaOfInterests(hit.id, buffer.toArray)
   }
 
   /**
