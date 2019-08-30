@@ -12,7 +12,7 @@ import scala.util.Try
 object AreaOfInterestApp {
   private val logger = Logger.getLogger(this.getClass)
 
-  private def makeEventsDir(dir: String): Boolean = {
+  private def makeSparkEventLogDir(dir: String): Boolean = {
     val path = Paths.get(dir)
     if (!Files.exists(path)) Try ( Files.createDirectories(path) ).isSuccess else true
   }
@@ -29,7 +29,7 @@ object AreaOfInterestApp {
     val conf = ConfigFactory.load("app.conf").getConfig("app")
 
     val sparkEventLogDir = conf.getString("spark.eventLog.dir")
-    val sparkEventDirCreated = makeEventsDir(sparkEventLogDir)
+    val sparkEventDirCreated = makeSparkEventLogDir(sparkEventLogDir)
     logger.info(s"*** $sparkEventLogDir exists or was created: $sparkEventDirCreated")
 
     val sparkConf = new SparkConf()
