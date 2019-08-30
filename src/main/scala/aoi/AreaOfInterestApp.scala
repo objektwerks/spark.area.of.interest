@@ -10,7 +10,7 @@ import org.apache.spark.sql.SparkSession
 import scala.util.Try
 
 object AreaOfInterestApp {
-  private val logger = Logger.getLogger(this.getClass)
+  private val logger = Logger.getLogger(getClass)
 
   private def makeSparkEventLogDir(dir: String): Boolean = {
     val path = Paths.get(dir)
@@ -44,11 +44,11 @@ object AreaOfInterestApp {
       .builder
       .config(sparkConf)
       .getOrCreate()
-    logger.info("*** Built AreaOfInterestApp Spark session. Press Ctrl C to terminate.")
+    logger.info("*** AreaOfInterestApp Spark session built. Press Ctrl C to stop.")
 
     sys.addShutdownHook {
       sparkSession.stop
-      logger.info("*** Stopped AreaOfInterestApp Spark session.")
+      logger.info("*** AreaOfInterestApp Spark session stopped.")
     }
 
     import sparkSession.implicits._
