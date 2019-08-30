@@ -32,8 +32,9 @@ object AreaOfInterest {
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
-  def mapHitToAreaOfInterests(areaOfInterests: Array[AreaOfInterest], areaOfInterestRadiusInKilometers: Double)
-                             (hit: Hit): HitToAreaOfInterests = {
+  def mapHitToAreaOfInterests(areaOfInterests: Array[AreaOfInterest],
+                              areaOfInterestRadiusInKilometers: Double,
+                              hit: Hit): HitToAreaOfInterests = {
     val buffer = new mutable.ArrayBuffer[String]
     areaOfInterests.foreach { areaOfInterest =>
       if (isHitWithinAreaOfInterest(hit, areaOfInterest, areaOfInterestRadiusInKilometers)) buffer += areaOfInterest.id
