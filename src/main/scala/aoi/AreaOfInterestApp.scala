@@ -29,8 +29,8 @@ object AreaOfInterestApp {
     val conf = ConfigFactory.load("app.conf").getConfig("app")
 
     val sparkEventLogDir = conf.getString("spark.eventLog.dir")
-    val sparkEventDirCreated = makeSparkEventLogDir(sparkEventLogDir)
-    logger.info(s"*** $sparkEventLogDir exists or was created: $sparkEventDirCreated")
+    val sparkEventLogDirCreated = makeSparkEventLogDir(sparkEventLogDir)
+    logger.info(s"***Spark Event Log directory ( $sparkEventLogDir ) exists or was created: $sparkEventLogDirCreated")
 
     val sparkConf = new SparkConf()
       .setMaster(conf.getString("master"))
@@ -44,11 +44,11 @@ object AreaOfInterestApp {
       .builder
       .config(sparkConf)
       .getOrCreate()
-    logger.info("*** Initialized Spark AreaOfInterestApp. Press Ctrl C to terminate.")
+    logger.info("*** Built AreaOfInterestApp Spark session. Press Ctrl C to terminate.")
 
     sys.addShutdownHook {
       sparkSession.stop
-      logger.info("*** Terminated Spark AreaOfInterestApp.")
+      logger.info("*** Stopped AreaOfInterestApp Spark session.")
     }
 
     import sparkSession.implicits._
