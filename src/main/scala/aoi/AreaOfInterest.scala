@@ -7,7 +7,6 @@ import org.apache.log4j.Logger
 import org.apache.spark.sql.Encoders
 
 import scala.collection.mutable
-import scala.util.Try
 
 case class AreaOfInterest(id: String, latitude: Double, longitude: Double)
 
@@ -22,13 +21,6 @@ object AreaOfInterest {
   val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema
   val hitStructType = Encoders.product[Hit].schema
   val hitToAreaOfInterests = Encoders.product[HitToAreaOfInterests]
-
-  def createSparkEventsDir(dir: String): Boolean = {
-    import java.nio.file.{Files, Paths}
-    val path = Paths.get(dir)
-    if (!Files.exists(path)) Try ( Files.createDirectories(path) ).isSuccess
-    else true
-  }
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 

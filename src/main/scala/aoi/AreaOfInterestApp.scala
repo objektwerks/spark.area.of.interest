@@ -1,5 +1,7 @@
 package aoi
 
+import java.nio.file.{Files, Paths}
+
 import com.typesafe.config.ConfigFactory
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
@@ -9,6 +11,11 @@ import scala.util.Try
 
 object AreaOfInterestApp {
   private val logger = Logger.getLogger(this.getClass)
+
+  private def makeEventsDir(dir: String): Boolean = {
+    val path = Paths.get(dir)
+    if (!Files.exists(path)) Try ( Files.createDirectories(path) ).isSuccess else true
+  }
 
   def main(args: Array[String]): Unit = {
     import AreaOfInterest._
@@ -22,7 +29,7 @@ object AreaOfInterestApp {
     val conf = ConfigFactory.load("app.conf").getConfig("app")
 
     val sparkEventLogDir = conf.getString("spark.eventLog.dir")
-    val sparkEventDirCreated = createSparkEventsDir(sparkEventLogDir)
+    val sparkEventDirCreated = makeEventsDir(sparkEventLogDir)
     logger.info(s"*** $sparkEventLogDir exists or was created: $sparkEventDirCreated")
 
     val sparkConf = new SparkConf()
