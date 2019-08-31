@@ -62,7 +62,7 @@ object AreaOfInterestApp {
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
 
-    // NOTE: Broadcast Variable scenario is enabled. To enable Dataset scenario, enable line 77 and disable line 66 and 78.
+    // NOTE: Broadcast Variable scenario is enabled. To enable Dataset scenario, disable line 66 and 78 and enable line 77.
     val broadcastVar = sparkSession.sparkContext.broadcast(areasOfInterest)
 
     val hits = sparkSession
