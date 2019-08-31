@@ -30,7 +30,7 @@ object AreaOfInterestApp {
 
     val sparkEventLogDir = conf.getString("spark.eventLog.dir")
     val sparkEventLogDirCreated = makeSparkEventLogDir(sparkEventLogDir)
-    logger.info(s"***Spark Event Log directory ( $sparkEventLogDir ) exists or was created: $sparkEventLogDirCreated")
+    logger.info(s"*** Spark Event Log directory ( $sparkEventLogDir ) exists or was created: $sparkEventLogDirCreated")
 
     val sparkConf = new SparkConf()
       .setMaster(conf.getString("master"))
