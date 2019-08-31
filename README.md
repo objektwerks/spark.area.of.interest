@@ -4,8 +4,8 @@ Spark Area of Interest
 
 Source
 ------
-1. AreaOfInterest : csv : (id: String, latitude: Double, longitude: Double)
-2. Hit : csv : (id: String, utc: Long, latitude: Double, longitude: Double)
+1. AreaOfInterest : csv ( ./data/ ) : (id: String, latitude: Double, longitude: Double)
+2. Hit : csv ( ./data/hits/ ) : (id: String, utc: Long, latitude: Double, longitude: Double)
 
 Flow
 ----
@@ -14,7 +14,7 @@ Flow
 
 Sink
 ----
-1. HitToAreaOfInterests to log
+1. HitToAreaOfInterests to log --- console and file ( ./target/app.log )
 
 Run
 ---
