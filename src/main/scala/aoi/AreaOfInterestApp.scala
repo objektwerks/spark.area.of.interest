@@ -61,7 +61,9 @@ object AreaOfInterestApp {
       .schema(areaOfInterestStructType)
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
-      .collect
+
+    // NOTE: Broadcast Variable scenario is enable. To enable Dataset scenario, enable line 77 and disable line 78.
+    val broadcastVar = sparkSession.sparkContext.broadcast(areasOfInterest)
 
     val hits = sparkSession
       .readStream
@@ -72,7 +74,8 @@ object AreaOfInterestApp {
       .csv(conf.getString("hits"))
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
-      .map(hit => mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers, hit))
+      // .map(hit => mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers, hit))
+      .map(hit => mapHitToAreaOfInterests(broadcastVar.value, areaOfInterestRadiusInKilometers, hit))
       .as[HitToAreaOfInterests]
       .writeStream
       .format("console")
