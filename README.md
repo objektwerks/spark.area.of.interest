@@ -14,7 +14,7 @@ Flow
 
 Sink
 ----
-1. Map[AreasOfInterest, Hit] to log
+1. HitToAreaOfInterests to log
 
 Run
 ---
