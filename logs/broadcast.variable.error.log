@@ -1,0 +1,657 @@
+INFO : 2019-08-31 17:59:13,913 [run-main-0] *** Main args(0): 30.0 : args(1): 999
+INFO : 2019-08-31 17:59:15,505 [run-main-0] *** areaOfInterestRadiusInKilometers: 30.0
+INFO : 2019-08-31 17:59:15,505 [run-main-0] *** hitDaysHence: 1480975155505
+INFO : 2019-08-31 17:59:15,586 [run-main-0] ***Spark Event Log directory ( /tmp/spark-events ) exists or was created: true
+INFO : 2019-08-31 17:59:15,712 [run-main-0] Running Spark version 2.4.3
+WARN : 2019-08-31 17:59:15,976 [run-main-0] Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+INFO : 2019-08-31 17:59:16,072 [run-main-0] Submitted application: aoi
+INFO : 2019-08-31 17:59:16,126 [run-main-0] Changing view acls to: objektwerks
+INFO : 2019-08-31 17:59:16,126 [run-main-0] Changing modify acls to: objektwerks
+INFO : 2019-08-31 17:59:16,127 [run-main-0] Changing view acls groups to: 
+INFO : 2019-08-31 17:59:16,127 [run-main-0] Changing modify acls groups to: 
+INFO : 2019-08-31 17:59:16,128 [run-main-0] SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(objektwerks); groups with view permissions: Set(); users  with modify permissions: Set(objektwerks); groups with modify permissions: Set()
+INFO : 2019-08-31 17:59:16,449 [run-main-0] Successfully started service 'sparkDriver' on port 63762.
+INFO : 2019-08-31 17:59:16,470 [run-main-0] Registering MapOutputTracker
+INFO : 2019-08-31 17:59:16,487 [run-main-0] Registering BlockManagerMaster
+INFO : 2019-08-31 17:59:16,490 [run-main-0] Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+INFO : 2019-08-31 17:59:16,490 [run-main-0] BlockManagerMasterEndpoint up
+INFO : 2019-08-31 17:59:16,500 [run-main-0] Created local directory at /private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/blockmgr-b38dc5b1-7f2a-409e-98cb-0b9b1b1bde5c
+INFO : 2019-08-31 17:59:16,515 [run-main-0] MemoryStore started with capacity 2004.6 MB
+INFO : 2019-08-31 17:59:16,528 [run-main-0] Registering OutputCommitCoordinator
+INFO : 2019-08-31 17:59:16,597 [run-main-0] Logging initialized @14387ms
+INFO : 2019-08-31 17:59:16,664 [run-main-0] jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+INFO : 2019-08-31 17:59:16,684 [run-main-0] Started @14474ms
+INFO : 2019-08-31 17:59:16,709 [run-main-0] Started ServerConnector@7a32bf93{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+INFO : 2019-08-31 17:59:16,709 [run-main-0] Successfully started service 'SparkUI' on port 4040.
+INFO : 2019-08-31 17:59:16,740 [run-main-0] Started o.s.j.s.ServletContextHandler@647770b0{/jobs,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,741 [run-main-0] Started o.s.j.s.ServletContextHandler@6deed966{/jobs/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,741 [run-main-0] Started o.s.j.s.ServletContextHandler@3cf7f51f{/jobs/job,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,742 [run-main-0] Started o.s.j.s.ServletContextHandler@2a747f8{/jobs/job/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,743 [run-main-0] Started o.s.j.s.ServletContextHandler@19198b23{/stages,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,743 [run-main-0] Started o.s.j.s.ServletContextHandler@1a45ca12{/stages/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,744 [run-main-0] Started o.s.j.s.ServletContextHandler@36969677{/stages/stage,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,745 [run-main-0] Started o.s.j.s.ServletContextHandler@6f821980{/stages/stage/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,746 [run-main-0] Started o.s.j.s.ServletContextHandler@6d250f29{/stages/pool,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,746 [run-main-0] Started o.s.j.s.ServletContextHandler@57d71508{/stages/pool/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,747 [run-main-0] Started o.s.j.s.ServletContextHandler@1658fc63{/storage,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,747 [run-main-0] Started o.s.j.s.ServletContextHandler@69e9b931{/storage/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,748 [run-main-0] Started o.s.j.s.ServletContextHandler@2cf0af62{/storage/rdd,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,749 [run-main-0] Started o.s.j.s.ServletContextHandler@43e080a1{/storage/rdd/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,750 [run-main-0] Started o.s.j.s.ServletContextHandler@120ad75a{/environment,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,750 [run-main-0] Started o.s.j.s.ServletContextHandler@360ec41b{/environment/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,751 [run-main-0] Started o.s.j.s.ServletContextHandler@1f2cf607{/executors,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,752 [run-main-0] Started o.s.j.s.ServletContextHandler@588e88cb{/executors/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,752 [run-main-0] Started o.s.j.s.ServletContextHandler@1c7a2487{/executors/threadDump,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,753 [run-main-0] Started o.s.j.s.ServletContextHandler@5c14050f{/executors/threadDump/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,762 [run-main-0] Started o.s.j.s.ServletContextHandler@24704c44{/static,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,763 [run-main-0] Started o.s.j.s.ServletContextHandler@45ae3157{/,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,764 [run-main-0] Started o.s.j.s.ServletContextHandler@d098db6{/api,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,765 [run-main-0] Started o.s.j.s.ServletContextHandler@6f03ad55{/jobs/job/kill,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,766 [run-main-0] Started o.s.j.s.ServletContextHandler@3042cefd{/stages/stage/kill,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:16,768 [run-main-0] Bound SparkUI to 0.0.0.0, and started at http://192.168.1.2:4040
+INFO : 2019-08-31 17:59:16,847 [run-main-0] Starting executor ID driver on host localhost
+INFO : 2019-08-31 17:59:16,875 [run-main-0] Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 63763.
+INFO : 2019-08-31 17:59:16,876 [run-main-0] Server created on 192.168.1.2:63763
+INFO : 2019-08-31 17:59:16,877 [run-main-0] Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+INFO : 2019-08-31 17:59:16,908 [run-main-0] Registering BlockManager BlockManagerId(driver, 192.168.1.2, 63763, None)
+INFO : 2019-08-31 17:59:16,912 [dispatcher-event-loop-2] Registering block manager 192.168.1.2:63763 with 2004.6 MB RAM, BlockManagerId(driver, 192.168.1.2, 63763, None)
+INFO : 2019-08-31 17:59:16,917 [run-main-0] Registered BlockManager BlockManagerId(driver, 192.168.1.2, 63763, None)
+INFO : 2019-08-31 17:59:16,918 [run-main-0] Initialized BlockManager: BlockManagerId(driver, 192.168.1.2, 63763, None)
+INFO : 2019-08-31 17:59:17,071 [run-main-0] Started o.s.j.s.ServletContextHandler@11bf56bb{/metrics/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,243 [run-main-0] Logging events to file:/tmp/spark-events/local-1567288756824
+INFO : 2019-08-31 17:59:17,313 [run-main-0] *** AreaOfInterestApp Spark session built. Press Ctrl C to stop.
+INFO : 2019-08-31 17:59:17,326 [run-main-0] Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/objektwerks/workspace/spark.area.of.interest/spark-warehouse/').
+INFO : 2019-08-31 17:59:17,326 [run-main-0] Warehouse path is 'file:/Users/objektwerks/workspace/spark.area.of.interest/spark-warehouse/'.
+INFO : 2019-08-31 17:59:17,336 [run-main-0] Started o.s.j.s.ServletContextHandler@694afa20{/SQL,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,336 [run-main-0] Started o.s.j.s.ServletContextHandler@676ba931{/SQL/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,337 [run-main-0] Started o.s.j.s.ServletContextHandler@50b11193{/SQL/execution,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,338 [run-main-0] Started o.s.j.s.ServletContextHandler@2a75a937{/SQL/execution/json,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,339 [run-main-0] Started o.s.j.s.ServletContextHandler@29a598b4{/static/sql,null,AVAILABLE,@Spark}
+INFO : 2019-08-31 17:59:17,745 [run-main-0] Registered StateStoreCoordinator endpoint
+INFO : 2019-08-31 17:59:19,300 [run-main-0] Block broadcast_0 stored as values in memory (estimated size 34.8 MB, free 1969.8 MB)
+INFO : 2019-08-31 17:59:19,840 [run-main-0] Block broadcast_0_piece0 stored as bytes in memory (estimated size 1531.0 B, free 1969.8 MB)
+INFO : 2019-08-31 17:59:19,842 [dispatcher-event-loop-5] Added broadcast_0_piece0 in memory on 192.168.1.2:63763 (size: 1531.0 B, free: 2004.6 MB)
+INFO : 2019-08-31 17:59:19,848 [run-main-0] Created broadcast 0 from broadcast at AreaOfInterestApp.scala:66
+INFO : 2019-08-31 17:59:20,092 [run-main-0] Writing atomically to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/metadata using temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/.metadata.496bd634-70fb-4922-b58c-ed84e92e6e30.tmp
+INFO : 2019-08-31 17:59:20,156 [run-main-0] Renamed temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/.metadata.496bd634-70fb-4922-b58c-ed84e92e6e30.tmp to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/metadata
+INFO : 2019-08-31 17:59:20,192 [run-main-0] Starting [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]. Use file:///private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987 to store the query checkpoint.
+INFO : 2019-08-31 17:59:20,224 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Set the compact interval to 10 [defaultCompactInterval: 10]
+INFO : 2019-08-31 17:59:20,232 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] maxFilesPerBatch = None, maxFileAgeMs = 604800000
+INFO : 2019-08-31 17:59:20,234 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Using Source [FileStreamSource[file:/Users/objektwerks/workspace/spark.area.of.interest/data/hits]] from DataSourceV1 named 'FileSource[./data/hits]' [DataSource(org.apache.spark.sql.SparkSession@4c694190,csv,List(),Some(StructType(StructField(id,StringType,true), StructField(utc,LongType,false), StructField(latitude,DoubleType,false), StructField(longitude,DoubleType,false))),List(),None,Map(delimiter -> ,, header -> true, basePath -> ./data/hits, path -> ./data/hits),None)]
+INFO : 2019-08-31 17:59:20,240 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Starting new streaming query.
+INFO : 2019-08-31 17:59:20,248 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Stream started from {}
+INFO : 2019-08-31 17:59:20,282 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Writing atomically to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/sources/0/0 using temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/sources/0/.0.d417d70a-dee8-4a28-b3a3-2c0228cc1956.tmp
+INFO : 2019-08-31 17:59:20,313 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Renamed temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/sources/0/.0.d417d70a-dee8-4a28-b3a3-2c0228cc1956.tmp to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/sources/0/0
+INFO : 2019-08-31 17:59:20,314 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Log offset set to 0 with 1 new files
+INFO : 2019-08-31 17:59:20,342 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Writing atomically to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/offsets/0 using temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/offsets/.0.0a1994ac-0b0e-499e-a9ac-d8d637e54081.tmp
+INFO : 2019-08-31 17:59:20,379 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Renamed temp file file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/offsets/.0.0a1994ac-0b0e-499e-a9ac-d8d637e54081.tmp to file:/private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987/offsets/0
+INFO : 2019-08-31 17:59:20,380 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1567288760319,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+INFO : 2019-08-31 17:59:20,414 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Processing 1 files from 0:0
+INFO : 2019-08-31 17:59:20,617 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Pruning directories with: 
+INFO : 2019-08-31 17:59:20,620 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Post-Scan Filters: 
+INFO : 2019-08-31 17:59:20,623 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Output Data Schema: struct<id: string, utc: bigint, latitude: double, longitude: double ... 2 more fields>
+INFO : 2019-08-31 17:59:20,629 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Pushed Filters: 
+INFO : 2019-08-31 17:59:20,989 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Code generated in 202.479508 ms
+INFO : 2019-08-31 17:59:21,156 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Code generated in 59.188422 ms
+INFO : 2019-08-31 17:59:21,163 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Block broadcast_1 stored as values in memory (estimated size 222.6 KB, free 1969.6 MB)
+INFO : 2019-08-31 17:59:21,229 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Block broadcast_1_piece0 stored as bytes in memory (estimated size 20.8 KB, free 1969.6 MB)
+INFO : 2019-08-31 17:59:21,230 [dispatcher-event-loop-7] Added broadcast_1_piece0 in memory on 192.168.1.2:63763 (size: 20.8 KB, free: 2004.6 MB)
+INFO : 2019-08-31 17:59:21,231 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Created broadcast 1 from start at AreaOfInterestApp.scala:83
+INFO : 2019-08-31 17:59:21,256 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+INFO : 2019-08-31 17:59:21,338 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Start processing data source writer: org.apache.spark.sql.execution.streaming.sources.MicroBatchWriter@465f7fb6. The input RDD has 1 partitions.
+INFO : 2019-08-31 17:59:21,342 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Starting job: start at AreaOfInterestApp.scala:83
+INFO : 2019-08-31 17:59:21,354 [dag-scheduler-event-loop] Got job 0 (start at AreaOfInterestApp.scala:83) with 1 output partitions
+INFO : 2019-08-31 17:59:21,355 [dag-scheduler-event-loop] Final stage: ResultStage 0 (start at AreaOfInterestApp.scala:83)
+INFO : 2019-08-31 17:59:21,355 [dag-scheduler-event-loop] Parents of final stage: List()
+INFO : 2019-08-31 17:59:21,356 [dag-scheduler-event-loop] Missing parents: List()
+INFO : 2019-08-31 17:59:21,364 [dag-scheduler-event-loop] Submitting ResultStage 0 (MapPartitionsRDD[1] at start at AreaOfInterestApp.scala:83), which has no missing parents
+INFO : 2019-08-31 17:59:21,423 [dag-scheduler-event-loop] Block broadcast_2 stored as values in memory (estimated size 24.1 KB, free 1969.5 MB)
+INFO : 2019-08-31 17:59:21,438 [dag-scheduler-event-loop] Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.6 KB, free 1969.5 MB)
+INFO : 2019-08-31 17:59:21,438 [dispatcher-event-loop-0] Added broadcast_2_piece0 in memory on 192.168.1.2:63763 (size: 10.6 KB, free: 2004.6 MB)
+INFO : 2019-08-31 17:59:21,439 [dag-scheduler-event-loop] Created broadcast 2 from broadcast at DAGScheduler.scala:1161
+INFO : 2019-08-31 17:59:21,450 [dag-scheduler-event-loop] Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at start at AreaOfInterestApp.scala:83) (first 15 tasks are for partitions Vector(0))
+INFO : 2019-08-31 17:59:21,451 [dag-scheduler-event-loop] Adding task set 0.0 with 1 tasks
+INFO : 2019-08-31 17:59:21,493 [dispatcher-event-loop-1] Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 8355 bytes)
+INFO : 2019-08-31 17:59:21,506 [Executor task launch worker for task 0] Running task 0.0 in stage 0.0 (TID 0)
+INFO : 2019-08-31 17:59:21,591 [Executor task launch worker for task 0] Reading File path: file:///Users/objektwerks/workspace/spark.area.of.interest/data/hits/hits.txt, range: 0-189, partition values: [empty row]
+INFO : 2019-08-31 17:59:21,617 [Executor task launch worker for task 0] Code generated in 17.683212 ms
+INFO : 2019-08-31 17:59:21,692 [Executor task launch worker for task 0] Pruning directories with: 
+INFO : 2019-08-31 17:59:21,692 [Executor task launch worker for task 0] Post-Scan Filters: 
+INFO : 2019-08-31 17:59:21,693 [Executor task launch worker for task 0] Output Data Schema: struct<id: string, latitude: double, longitude: double ... 1 more fields>
+INFO : 2019-08-31 17:59:21,693 [Executor task launch worker for task 0] Pushed Filters: 
+ERROR: 2019-08-31 17:59:21,696 [Executor task launch worker for task 0] Aborting task
+java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR: 2019-08-31 17:59:22,210 [Executor task launch worker for task 0] Aborting commit for partition 0 (task 0, attempt 0stage 0.0)
+ERROR: 2019-08-31 17:59:22,211 [Executor task launch worker for task 0] Aborted commit for partition 0 (task 0, attempt 0stage 0.0)
+ERROR: 2019-08-31 17:59:22,218 [Executor task launch worker for task 0] Exception in task 0.0 in stage 0.0 (TID 0)
+java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+WARN : 2019-08-31 17:59:22,519 [task-result-getter-0] Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+ERROR: 2019-08-31 17:59:22,532 [task-result-getter-0] Task 0 in stage 0.0 failed 1 times; aborting job
+INFO : 2019-08-31 17:59:22,534 [task-result-getter-0] Removed TaskSet 0.0, whose tasks have all completed, from pool 
+INFO : 2019-08-31 17:59:22,545 [dag-scheduler-event-loop] Cancelling stage 0
+INFO : 2019-08-31 17:59:22,547 [dag-scheduler-event-loop] Killing all running tasks in stage 0: Stage cancelled
+INFO : 2019-08-31 17:59:22,552 [dag-scheduler-event-loop] ResultStage 0 (start at AreaOfInterestApp.scala:83) failed in 1.165 s due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+INFO : 2019-08-31 17:59:22,574 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Job 0 failed: start at AreaOfInterestApp.scala:83, took 1.232267 s
+ERROR: 2019-08-31 17:59:22,577 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Data source writer org.apache.spark.sql.execution.streaming.sources.MicroBatchWriter@465f7fb6 is aborting.
+ERROR: 2019-08-31 17:59:22,578 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Data source writer org.apache.spark.sql.execution.streaming.sources.MicroBatchWriter@465f7fb6 aborted.
+ERROR: 2019-08-31 17:59:22,591 [stream execution thread for [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873]] Query [id = e6400bd8-ecfc-436d-94b7-6d00fbe4dbb9, runId = 1644e5ab-85b8-49ba-a682-d93bb3f43873] terminated with error
+org.apache.spark.SparkException: Writing job aborted.
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec.doExecute(WriteToDataSourceV2Exec.scala:92)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
+	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
+	at org.apache.spark.sql.execution.SparkPlan.getByteArrayRdd(SparkPlan.scala:247)
+	at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:296)
+	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3383)
+	at org.apache.spark.sql.Dataset$$anonfun$collect$1.apply(Dataset.scala:2782)
+	at org.apache.spark.sql.Dataset$$anonfun$collect$1.apply(Dataset.scala:2782)
+	at org.apache.spark.sql.Dataset$$anonfun$53.apply(Dataset.scala:3364)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:78)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3363)
+	at org.apache.spark.sql.Dataset.collect(Dataset.scala:2782)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$org$apache$spark$sql$execution$streaming$MicroBatchExecution$$runBatch$5$$anonfun$apply$17.apply(MicroBatchExecution.scala:540)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:78)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$org$apache$spark$sql$execution$streaming$MicroBatchExecution$$runBatch$5.apply(MicroBatchExecution.scala:535)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter$class.reportTimeTaken(ProgressReporter.scala:351)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:58)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.org$apache$spark$sql$execution$streaming$MicroBatchExecution$$runBatch(MicroBatchExecution.scala:534)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$runActivatedStream$1$$anonfun$apply$mcZ$sp$1.apply$mcV$sp(MicroBatchExecution.scala:198)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$runActivatedStream$1$$anonfun$apply$mcZ$sp$1.apply(MicroBatchExecution.scala:166)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$runActivatedStream$1$$anonfun$apply$mcZ$sp$1.apply(MicroBatchExecution.scala:166)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter$class.reportTimeTaken(ProgressReporter.scala:351)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:58)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$runActivatedStream$1.apply$mcZ$sp(MicroBatchExecution.scala:166)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:56)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:160)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:281)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:193)
+Caused by: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec.doExecute(WriteToDataSourceV2Exec.scala:64)
+	... 35 more
+Caused by: java.lang.NullPointerException
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.org$apache$spark$sql$execution$DataSourceScanExec$$redact(DataSourceScanExec.scala:73)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:57)
+	at org.apache.spark.sql.execution.DataSourceScanExec$$anonfun$5.apply(DataSourceScanExec.scala:55)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.simpleString(DataSourceScanExec.scala:55)
+	at org.apache.spark.sql.execution.FileSourceScanExec.simpleString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.plans.QueryPlan.verboseString(QueryPlan.scala:177)
+	at org.apache.spark.sql.execution.FileSourceScanExec.org$apache$spark$sql$execution$DataSourceScanExec$$super$verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.execution.DataSourceScanExec$class.verboseString(DataSourceScanExec.scala:63)
+	at org.apache.spark.sql.execution.FileSourceScanExec.verboseString(DataSourceScanExec.scala:159)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:548)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.generateTreeString(WholeStageCodegenExec.scala:692)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.generateTreeString(TreeNode.scala:568)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.treeString(TreeNode.scala:472)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$toString$3.apply(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.stringOrError(QueryExecution.scala:99)
+	at org.apache.spark.sql.execution.QueryExecution.toString(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:75)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3345)
+	at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2715)
+	at aoi.AreaOfInterest$.mapHitToAreaOfInterests(AreaOfInterest.scala:31)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at aoi.AreaOfInterestApp$$anonfun$6.apply(AreaOfInterestApp.scala:78)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:117)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR: 2019-08-31 17:59:23,196 [spark-listener-group-eventLog] uncaught error in thread spark-listener-group-eventLog, stopping SparkContext
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+ERROR: 2019-08-31 17:59:23,221 [spark-listener-group-appStatus] uncaught error in thread spark-listener-group-appStatus, stopping SparkContext
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+ERROR: 2019-08-31 17:59:23,214 [spark-listener-group-shared] uncaught error in thread spark-listener-group-shared, stopping SparkContext
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+ERROR: 2019-08-31 17:59:23,205 [Spark Context Cleaner] Error in cleaning thread
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at org.apache.spark.ContextCleaner$$anonfun$org$apache$spark$ContextCleaner$$keepCleaning$1.apply$mcV$sp(ContextCleaner.scala:181)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.ContextCleaner.org$apache$spark$ContextCleaner$$keepCleaning(ContextCleaner.scala:178)
+	at org.apache.spark.ContextCleaner$$anon$1.run(ContextCleaner.scala:73)
+ERROR: 2019-08-31 17:59:23,364 [spark-listener-group-shared] throw uncaught fatal error in thread spark-listener-group-shared
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+ERROR: 2019-08-31 17:59:23,203 [spark-listener-group-executorManagement] uncaught error in thread spark-listener-group-executorManagement, stopping SparkContext
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+ERROR: 2019-08-31 17:59:23,202 [spark-listener-group-streams] uncaught error in thread spark-listener-group-streams, stopping SparkContext
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+WARN : 2019-08-31 17:59:23,201 [org.apache.hadoop.fs.FileSystem$Statistics$StatisticsDataReferenceCleaner] exception in the cleaner thread but it will continue to run
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at org.apache.hadoop.fs.FileSystem$Statistics$StatisticsDataReferenceCleaner.run(FileSystem.java:2989)
+	at java.lang.Thread.run(Thread.java:748)
+INFO : 2019-08-31 17:59:23,400 [stop-spark-context] SparkContext already stopped.
+ERROR: 2019-08-31 17:59:23,400 [spark-listener-group-streams] throw uncaught fatal error in thread spark-listener-group-streams
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+INFO : 2019-08-31 17:59:23,399 [stop-spark-context] SparkContext already stopped.
+ERROR: 2019-08-31 17:59:23,399 [spark-listener-group-executorManagement] throw uncaught fatal error in thread spark-listener-group-executorManagement
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+INFO : 2019-08-31 17:59:23,396 [Thread-3] Shutdown hook called
+INFO : 2019-08-31 17:59:23,394 [shutdownHook1] SparkContext already stopped.
+INFO : 2019-08-31 17:59:23,364 [stop-spark-context] SparkContext already stopped.
+INFO : 2019-08-31 17:59:23,349 [stop-spark-context] SparkContext already stopped.
+ERROR: 2019-08-31 17:59:23,349 [spark-listener-group-appStatus] throw uncaught fatal error in thread spark-listener-group-appStatus
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+INFO : 2019-08-31 17:59:23,341 [stop-spark-context] Stopped Spark@7a32bf93{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+ERROR: 2019-08-31 17:59:23,331 [spark-listener-group-eventLog] throw uncaught fatal error in thread spark-listener-group-eventLog
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply$mcJ$sp(AsyncEventQueue.scala:97)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anonfun$org$apache$spark$scheduler$AsyncEventQueue$$dispatch$1.apply(AsyncEventQueue.scala:87)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:58)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:87)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1$$anonfun$run$1.apply$mcV$sp(AsyncEventQueue.scala:83)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1302)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$1.run(AsyncEventQueue.scala:82)
+INFO : 2019-08-31 17:59:23,407 [shutdownHook1] *** AreaOfInterestApp Spark session stopped.
+INFO : 2019-08-31 17:59:23,411 [stop-spark-context] Stopped Spark web UI at http://192.168.1.2:4040
+INFO : 2019-08-31 17:59:23,419 [Thread-3] Shutdown hook called
+INFO : 2019-08-31 17:59:23,420 [Thread-3] Deleting directory /private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/spark-971397ed-8c85-4f0f-b0d0-3a6dba229c0e/userFiles-b92b1cf7-f50e-4259-8e95-cf4c6c62b9ef
+INFO : 2019-08-31 17:59:23,427 [Thread-3] Deleting directory /private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/spark-971397ed-8c85-4f0f-b0d0-3a6dba229c0e
+INFO : 2019-08-31 17:59:23,433 [Thread-3] Deleting directory /private/var/folders/cd/1wkmn_gn2d164ch7c66b_46h0000gn/T/temporary-5a345f58-3998-4720-be7d-592617139987
