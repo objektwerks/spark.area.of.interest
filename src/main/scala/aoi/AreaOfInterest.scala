@@ -4,7 +4,7 @@ import java.lang.Math.{atan2, cos, sin, sqrt}
 import java.time.{Duration, Instant}
 
 import org.apache.log4j.Logger
-import org.apache.spark.sql.{Dataset, Encoders}
+import org.apache.spark.sql.Encoders
 
 import scala.collection.mutable
 
@@ -24,7 +24,7 @@ object AreaOfInterest {
 
   def daysToEpochMillis(days: Long): Long = Instant.now.minus(Duration.ofDays(days)).toEpochMilli
 
-  def mapHitToAreaOfInterests(areaOfInterests: Dataset[AreaOfInterest],
+  def mapHitToAreaOfInterests(areaOfInterests: Array[AreaOfInterest],
                               areaOfInterestRadiusInKilometers: Double,
                               hit: Hit): HitToAreaOfInterests = {
     val buffer = new mutable.ArrayBuffer[String]

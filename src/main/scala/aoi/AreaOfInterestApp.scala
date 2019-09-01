@@ -38,7 +38,7 @@ object AreaOfInterestApp {
       .set("spark.serializer", conf.getString("spark.serializer"))
       .set("spark.eventLog.enabled", conf.getBoolean("spark.eventLog.enabled").toString)
       .set("spark.eventLog.dir", sparkEventLogDir)
-      .registerKryoClasses(Array(classOf[AreaOfInterest], classOf[Hit]))
+      .registerKryoClasses(Array(classOf[AreaOfInterest], classOf[Hit], classOf[HitToAreaOfInterests]))
 
     val sparkSession = SparkSession
       .builder
@@ -61,9 +61,7 @@ object AreaOfInterestApp {
       .schema(areaOfInterestStructType)
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
-
-    // NOTE: Broadcast Variable scenario is enabled. To enable Dataset scenario, disable line 66 and 78 and enable line 77.
-    val broadcastVar = sparkSession.sparkContext.broadcast(areasOfInterest)
+      .collect
 
     val hits = sparkSession
       .readStream
@@ -74,8 +72,7 @@ object AreaOfInterestApp {
       .csv(conf.getString("hits"))
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
-      // .map(hit => mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers, hit))
-      .map(hit => mapHitToAreaOfInterests(broadcastVar.value, areaOfInterestRadiusInKilometers, hit))
+      .map(hit => mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers, hit))
       .as[HitToAreaOfInterests]
       .writeStream
       .format("console")
