@@ -5,7 +5,7 @@ Spark Area of Interest
 Note
 ----
 >Unable to establish a dataset or broadcast variable as a lookup table for the structured streaming component of this
->application. Only a call to collect, yielding an array, works.
+>application. See logs directory for details. Only a call to collect, yielding an array, works.
 
 Source
 ------
