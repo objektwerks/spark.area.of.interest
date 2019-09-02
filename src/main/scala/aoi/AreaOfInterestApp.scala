@@ -53,7 +53,8 @@ object AreaOfInterestApp {
 
     import sparkSession.implicits._
 
-    val areasOfInterest = sparkSession
+    val broadcastAreasOfInterest = sparkSession.sparkContext.broadcast(
+      sparkSession
       .read
       .format("csv")
       .option("header", true)
@@ -62,6 +63,7 @@ object AreaOfInterestApp {
       .load(conf.getString("aoi"))
       .as[AreaOfInterest]
       .collect
+    )
 
     val hits = sparkSession
       .readStream
@@ -72,7 +74,7 @@ object AreaOfInterestApp {
       .csv(conf.getString("hits"))
       .as[Hit]
       .filter(hit => hit.utc > hitDaysHence)
-      .map(hit => mapHitToAreaOfInterests(areasOfInterest, areaOfInterestRadiusInKilometers, hit))
+      .map(hit => mapHitToAreaOfInterests(broadcastAreasOfInterest.value, areaOfInterestRadiusInKilometers, hit))
       .as[HitToAreaOfInterests]
       .writeStream
       .format("console")
