@@ -30,6 +30,7 @@ Submit
 1. sbt clean compile package
 2. chmod +x submit.sh ( required only once )
 3. ./submit.sh
+4. Press Ctrl C to stop.
 
 >WARNING: Requires correct Scala version vis-a-vis Spark version to run correctly.
 
@@ -40,11 +41,7 @@ Submit
 UI
 --
 1. SparkUI : localhost:4040
-2. History Server UI : localhost:18080 : start-history-server.sh | stop-history-server.sh
-
-Stop
-----
-1. Control-C
+2. History Server UI : localhost:18080 : start-history-server.sh | stop-history-server.shs
  
 Log
 ---
