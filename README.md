@@ -22,7 +22,7 @@ Run
 2. sbt "run 25.0 365" | sbt run ( using built-in default values )
 3. Press Ctrl C to stop.
 
->AreaOfInterestApp takes **2** commandline args:
+>**NOTE** AreaOfInterestApp takes **2** commandline args:
 1. areaOfInterestRadiusInKilometers ( 25.0, in above example, defaults to 25.0 )
 2. hitDaysHence ( 365.0 in above example, defaults to 730 )
 
