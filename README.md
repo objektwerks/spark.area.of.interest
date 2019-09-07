@@ -40,7 +40,7 @@ Submit
 3. ./submit.sh
 4. Press Ctrl C to stop.
 
->The 2 commandline args are specified in submit.sh.
+>**NOTE** The 2 commandline args are specified in submit.sh.
 
 UI
 --
