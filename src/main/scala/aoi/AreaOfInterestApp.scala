@@ -20,9 +20,8 @@ object AreaOfInterestApp {
   def main(args: Array[String]): Unit = {
     import AreaOfInterest._
 
-    logger.info(s"*** Main args(0): ${args(0)} : args(1): ${args(1)}")
     val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
-    val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(365))
+    val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(730))
     logger.info(s"*** areaOfInterestRadiusInKilometers: $areaOfInterestRadiusInKilometers")
     logger.info(s"*** hitDaysHence: $hitDaysHence")
 

@@ -19,7 +19,8 @@ Sink
 Run
 ---
 1. sbt clean compile
-2. sbt "run 30.0 999"
+2. sbt "run 25.0 365" | sbt run ( using built-in default values )
+3. Press Ctrl C to stop.
 
 Submit
 ------
@@ -33,8 +34,8 @@ Submit
 >WARNING: Requires correct Scala version vis-a-vis Spark version to run correctly.
 
 >AreaOfInterestApp takes **2** commandline args.
-1. areaOfInterestRadiusInKilometers ( 15.0 in above example, defaults to 25.0 )
-2. hitDaysHence ( 30 in above example, defaults to 365 )
+1. areaOfInterestRadiusInKilometers ( 25.0 in above example, defaults to 25.0 )
+2. hitDaysHence ( 365.0 in above example, defaults to 730 )
 
 UI
 --
