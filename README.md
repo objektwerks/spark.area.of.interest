@@ -22,6 +22,8 @@ Run
 2. sbt "run 25.0 365" | sbt run ( using built-in default values )
 3. Press Ctrl C to stop.
 
+>**WARNING** The submit.sh seems to run only with Scala 2.11.12!!!
+
 Submit
 ------
 >First create a log4j.properties file from log4j.properties.template.
