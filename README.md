@@ -25,17 +25,15 @@ Run
 Submit
 ------
 >First create a log4j.properties file from log4j.properties.template.
->See: /usr/local/Cellar/apache-spark/2.4.3/libexec/conf/log4j.properties.template
+>See: /usr/local/Cellar/apache-spark/2.4.4s/libexec/conf/log4j.properties.template
 
 1. sbt clean compile package
 2. chmod +x submit.sh ( required only once )
 3. ./submit.sh
 4. Press Ctrl C to stop.
 
->WARNING: Requires correct Scala version vis-a-vis Spark version to run correctly.
-
 >AreaOfInterestApp takes **2** commandline args.
-1. areaOfInterestRadiusInKilometers ( 25.0 in above example, defaults to 25.0 )
+1. areaOfInterestRadiusInKilometers ( 25.0, in above example, defaults to 25.0 )
 2. hitDaysHence ( 365.0 in above example, defaults to 730 )
 
 UI
