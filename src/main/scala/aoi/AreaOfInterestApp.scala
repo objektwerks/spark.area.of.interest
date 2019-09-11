@@ -3,22 +3,19 @@ package aoi
 import java.nio.file.{Files, Paths}
 
 import com.typesafe.config.ConfigFactory
-import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
 import scala.util.Try
 
 object AreaOfInterestApp {
-  private val logger = Logger.getLogger(getClass)
-
-  private def makeSparkEventLogDir(dir: String): Boolean = {
-    val path = Paths.get(dir)
-    if (!Files.exists(path)) Try ( Files.createDirectories(path) ).isSuccess else true
-  }
-
   def main(args: Array[String]): Unit = {
     import AreaOfInterest._
+
+    def makeSparkEventLogDir(dir: String): Boolean = {
+      val path = Paths.get(dir)
+      if (!Files.exists(path)) Try ( Files.createDirectories(path) ).isSuccess else true
+    }
 
     val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
     val hitDaysHence = Try(daysToEpochMillis(args(1).toLong)).getOrElse(daysToEpochMillis(730))

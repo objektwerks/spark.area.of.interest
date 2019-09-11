@@ -30,6 +30,11 @@ Run
 >Consequently, the build.sbt is set to Scala 2.11.12. The alternative would be to download and install
 >the Scala 2.12 version of Apache Spark via the Apache Spart web site.
 
+>**SBT 1.3.0*** ClassLoader management: To prevent resource leaks, sbt 1.3.0 closes the ephemeral ClassLoaders
+>used by the run and test tasks after those tasks complete. This may cause downstream crashes if the task uses
+>ShutdownHooks or if any threads created by the tasks continue running after the task completes. To disable this
+>behavior, run sbt with **-Dsbt.classloader.close=false**.
+
 Submit
 ------
 >First create a log4j.properties file from log4j.properties.template.

@@ -15,7 +15,7 @@ case class Hit(id: String, utc: Long, latitude: Double, longitude: Double)
 case class HitToAreaOfInterests(hitId: String, aoiIds: Array[String])
 
 object AreaOfInterest {
-  private val logger = Logger.getLogger(getClass)
+  val logger = Logger.getLogger(getClass.getSimpleName)
   private val earthRadiusInKilometers = 6371
 
   val areaOfInterestStructType = Encoders.product[AreaOfInterest].schema
