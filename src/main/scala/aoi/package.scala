@@ -5,7 +5,7 @@ import org.apache.log4j.Logger
 import scala.util.Try
 
 package object aoi {
-  private val logger = Logger.getLogger(aoi.getClass.getSimpleName)
+  private val logger = Logger.getLogger(getClass.getSimpleName)
 
   def makeSparkEventLogDir(dir: String): Boolean = {
     val path = Paths.get(dir)
