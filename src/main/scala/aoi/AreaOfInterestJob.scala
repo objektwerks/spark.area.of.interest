@@ -11,7 +11,7 @@ object AreaOfInterestJob {
   import AreaOfInterest._
 
   def main(args: Array[String]): Unit = {
-    val logger = Logger.getLogger(AreaOfInterestJob.getClass.getSimpleName)
+    val logger = Logger.getLogger(getClass.getSimpleName)
     val conf = ConfigFactory.load("job.conf").getConfig("job")
 
     val areaOfInterestRadiusInKilometers = Try(args(0).toDouble).getOrElse(25.0)
