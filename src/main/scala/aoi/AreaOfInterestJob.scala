@@ -28,10 +28,18 @@ object AreaOfInterestJob {
     val sparkConf = new SparkConf()
       .setMaster(conf.getString("master"))
       .setAppName(conf.getString("name"))
-      .set("spark.serializer", conf.getString("spark.serializer"))
       .set("spark.eventLog.enabled", conf.getBoolean("spark.eventLog.enabled").toString)
       .set("spark.eventLog.dir", conf.getString("spark.eventLog.dir"))
-      .registerKryoClasses(Array(classOf[AreaOfInterest], classOf[Hit], classOf[HitToAreaOfInterests]))
+      .set("spark.serializer", conf.getString("spark.serializer"))
+      .set("spark.kryo.registrationRequired", "true")
+      .registerKryoClasses( Array(
+        classOf[AreaOfInterest],
+        classOf[Array[AreaOfInterest]],
+        classOf[Hit],
+        classOf[Array[Hit]],
+        classOf[HitToAreaOfInterests],
+        classOf[Array[HitToAreaOfInterests]]
+      ))
 
     val sparkSession = SparkSession
       .builder
